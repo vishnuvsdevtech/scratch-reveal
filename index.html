@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scratch — one thing worth the effort</title>
+<meta name="description" content="A result hidden under foil. You have to scratch it yourself. Delight decays with repetition, so it happens once.">
+<meta name="theme-color" content="#08090b">
+<link rel="canonical" href="https://vishnuvsdevtech.github.io/scratch-reveal/">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+:root{--acc:#c9a227}
+.shell{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+.under{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+ padding:clamp(18px,4vw,44px);background:
+ radial-gradient(120% 100% at 20% 0%,#1d2430 0%,#0a0d12 70%)}
+.under b{font:600 10px var(--mono);letter-spacing:.18em;color:var(--acc);text-transform:uppercase}
+.under h2{margin:8px 0 6px;font-size:clamp(20px,3.6vw,32px);letter-spacing:-.02em}
+.under p{margin:0;color:var(--ink2);max-width:46ch;font-size:13.5px}
+#c{position:relative;display:block;width:100%;height:auto;touch-action:none;cursor:crosshair}
+.meter b{color:var(--acc)}
+</style></head>
+<body><div class="wrap">
+<header><h1>One thing worth the <em>effort</em></h1><span class="tag">scratch to reveal · once</span></header>
+<div class="shell">
+  <div class="under">
+    <b>Result</b>
+    <h2>0.0° bearing error</h2>
+    <p>Eight mics, 0.56 m aperture, 31° beam — the array located a 2 kHz source dead on broadside, and the simulation said exactly that before any parts arrived.</p>
+  </div>
+  <canvas id="c" width="900" height="330"></canvas>
+</div>
+<div class="meter"><span>revealed <b id="m-r">0%</b></span><span>attempts <b id="m-n">0</b></span>
+  <span>hint <b id="m-h">scratch the foil</b></span></div>
+<div class="notes"><p>The foil is a canvas; the pointer erases it with <code>destination-out</code>, and every twelfth frame the alpha channel is sampled to measure how much is gone. Past 65 % the rest wipes itself, because finishing should feel like an ending rather than a chore.</p>
+<p>This is used exactly once on the page. Delight is a limited resource: the second scratch is manual labour, the tenth is a bug report.</p></div>
+<footer><span>Scratch · POC</span><span>alpha sampling, not guessing</span></footer>
+</div>
+<script src="assets/app.js"></script></body></html>
